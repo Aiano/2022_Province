@@ -1,0 +1,9 @@
+"./main.obj"
+"./startup_ccs.obj"
+"./bsp/bsp_adc.obj"
+"./bsp/bsp_can.obj"
+"./bsp/follow_line.obj"
+"./bsp/uart_parser.obj"
+"../blinky_ccs.cmd"
+-llibc.a
+-l"C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib"
