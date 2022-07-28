@@ -20,6 +20,6 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
-#include "utils/uartstdio.h"
+//#include "utils/uartstdio.h"
 
 #endif /* MAIN_H_ */

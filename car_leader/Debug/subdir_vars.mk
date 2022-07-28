@@ -6,36 +6,30 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CMD_SRCS += \
-../tm4c123gh6pm.cmd 
+../blinky_ccs.cmd 
 
 C_SRCS += \
-../simple_rx.c \
-../tm4c123gh6pm_startup_ccs.c \
-C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c 
+../main.c \
+../startup_ccs.c 
 
 C_DEPS += \
-./simple_rx.d \
-./tm4c123gh6pm_startup_ccs.d \
-./uartstdio.d 
+./main.d \
+./startup_ccs.d 
 
 OBJS += \
-./simple_rx.obj \
-./tm4c123gh6pm_startup_ccs.obj \
-./uartstdio.obj 
+./main.obj \
+./startup_ccs.obj 
 
 OBJS__QUOTED += \
-"simple_rx.obj" \
-"tm4c123gh6pm_startup_ccs.obj" \
-"uartstdio.obj" 
+"main.obj" \
+"startup_ccs.obj" 
 
 C_DEPS__QUOTED += \
-"simple_rx.d" \
-"tm4c123gh6pm_startup_ccs.d" \
-"uartstdio.d" 
+"main.d" \
+"startup_ccs.d" 
 
 C_SRCS__QUOTED += \
-"../simple_rx.c" \
-"../tm4c123gh6pm_startup_ccs.c" \
-"C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.c" 
+"../main.c" \
+"../startup_ccs.c" 
 
 

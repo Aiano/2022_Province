@@ -53,5 +53,6 @@ void bsp_can_set_current(int16_t value, int motor_id);
 void bsp_can_pid_param_init();
 int16_t speed_pid_realize(PID *pid, float actual_val);
 void bsp_can_speed_loop(int motor_id);
+void bsp_can_set_speed(int16_t motor1, int16_t motor2);
 
 #endif /* BSP_BSP_CAN_H_ */

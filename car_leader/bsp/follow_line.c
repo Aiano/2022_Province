@@ -11,16 +11,17 @@
 
 int16_t target_value = 120;
 int16_t delta_value = 0;
-int16_t avg_speed = 1000;
-int16_t Kp = 10;
+int16_t avg_speed = 3000;
+int16_t Kp = 20;
 int16_t u = 0;
-uint32_t ultrasonic_value = 0;
+uint32_t ultrasonic_value;
 
 void follow_line(int16_t now_value){
     ultrasonic_value = bsp_adc_read();
+//    ultrasonic_value = 200;
 
-    UARTSend((uint8_t *)"hello\n", 16);
-    if(ultrasonic_value < 100){
+//    UARTSend((uint8_t *)"hello\n", 16);
+    if(ultrasonic_value < 300){
         bsp_can_set_speed(0, 0);
     }else{
         delta_value = target_value - now_value;

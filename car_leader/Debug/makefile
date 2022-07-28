@@ -10,14 +10,16 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./simple_rx.obj" \
-"./tm4c123gh6pm_startup_ccs.obj" \
-"./uartstdio.obj" \
+"./main.obj" \
+"./startup_ccs.obj" \
+"./bsp/bsp_adc.obj" \
 "./bsp/bsp_can.obj" \
-"../tm4c123gh6pm.cmd" \
+"./bsp/follow_line.obj" \
+"./bsp/uart_parser.obj" \
+"../blinky_ccs.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
--l"C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" \
+-l"C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib" \
 
 -include ../makefile.init
 
@@ -132,37 +134,42 @@ EXE_OUTPUTS__QUOTED += \
 "car_leader.out" \
 
 BIN_OUTPUTS += \
-car_leader.hex \
+car_leader.bin \
 
 BIN_OUTPUTS__QUOTED += \
-"car_leader.hex" \
+"car_leader.bin" \
 
 
 # All Target
-all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "car_leader.out"
+all: car_leader.out
 
 # Tool invocations
 car_leader.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
-	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"car_leader.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/lib" -i"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="car_leader_linkInfo.xml" --rom_model -o "car_leader.out" $(ORDERED_OBJS)
+	@echo 'Invoking: ARM Linker'
+	"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -O2 --advice:power=all -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --define=TARGET_IS_TM4C123_RB1 --diag_warning=225 --diag_wrap=off --display_error_number --gen_func_subsections=on --ual -z -m"blinky_ccs.map" --stack_size=512 --heap_size=0 -i"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/lib" -i"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="car_leader_linkInfo.xml" --rom_model -o "car_leader.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
+	@$(MAKE) --no-print-directory post-build
 
-car_leader.hex: $(EXE_OUTPUTS)
+car_leader.bin: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
-	@echo 'Invoking: Arm Hex Utility'
-	"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/bin/armhex" --diag_wrap=off -o "car_leader.hex" $(EXE_OUTPUTS__QUOTED)
+	@echo 'Invoking: ARM Hex Utility'
+	"C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/bin/armhex" --diag_wrap=off -o "car_leader.bin" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
+	@$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "simple_rx.obj" "tm4c123gh6pm_startup_ccs.obj" "uartstdio.obj" "bsp\bsp_can.obj" 
-	-$(RM) "simple_rx.d" "tm4c123gh6pm_startup_ccs.d" "uartstdio.d" "bsp\bsp_can.d" 
+	-$(RM) "main.obj" "startup_ccs.obj" "bsp\bsp_adc.obj" "bsp\bsp_can.obj" "bsp\follow_line.obj" "bsp\uart_parser.obj" 
+	-$(RM) "main.d" "startup_ccs.d" "bsp\bsp_adc.d" "bsp\bsp_can.d" "bsp\follow_line.d" "bsp\uart_parser.d" 
 	-@echo 'Finished clean'
+	-@echo ' '
+
+post-build:
+	-"C:/ti/ccs1200/ccs/utils/tiobj2bin/tiobj2bin" "car_leader.out" "car_leader.bin" "C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/bin/armofd" "C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/bin/armhex" "C:/ti/ccs1200/ccs/utils/tiobj2bin/mkhex4bin"
 	-@echo ' '
 
 .PHONY: all clean dependents

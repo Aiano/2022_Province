@@ -3,7 +3,7 @@
 bsp/follow_line.obj: ../bsp/follow_line.c
 bsp/follow_line.obj: ../bsp/follow_line.h
 bsp/follow_line.obj: ../bsp/bsp_can.h
-bsp/follow_line.obj: D:/workspace_v12/blinky/main.h
+bsp/follow_line.obj: D:/workspace_v12/car_leader/main.h
 bsp/follow_line.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdbool.h
 bsp/follow_line.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/_ti_config.h
 bsp/follow_line.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/linkage.h
@@ -39,7 +39,7 @@ bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 
 ../bsp/bsp_can.h:
 
-D:/workspace_v12/blinky/main.h:
+D:/workspace_v12/car_leader/main.h:
 
 C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdbool.h:
 

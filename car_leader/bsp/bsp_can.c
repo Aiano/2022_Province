@@ -248,7 +248,7 @@ void bsp_can_get_feedback(){
     m2006_torque[index - 1] = pui8MsgData[4] << 8 | pui8MsgData[5];
 
     int16_t u = speed_pid_realize(pid_speed + index - 1, m2006_speed[index - 1]);
-    UARTprintf("u=%d\n", u);
+//    UARTprintf("u=%d\n", u);
 //     speed loop
     bsp_can_set_current(u, index);
 }
@@ -270,7 +270,7 @@ void bsp_can_set_current(int16_t value, int motor_id){
 
 void bsp_can_pid_param_init(){
     // Motor3
-    pid_speed[2].target_val = -5000.0;
+    pid_speed[2].target_val = 0.0; // -
     pid_speed[2].output_val = 0.0;
     pid_speed[2].err = 0.0;
     pid_speed[2].err_last = 0.0;
@@ -279,7 +279,7 @@ void bsp_can_pid_param_init(){
     pid_speed[2].Ki = 0.0;
     pid_speed[2].Kd = 0.0;
     // Motor4
-    pid_speed[3].target_val = 5000.0;
+    pid_speed[3].target_val = 0.0; // +
     pid_speed[3].output_val = 0.0;
     pid_speed[3].err = 0.0;
     pid_speed[3].err_last = 0.0;
@@ -321,4 +321,11 @@ int16_t speed_pid_realize(PID *pid, float actual_val) {
 
     /*返回当前实际值*/
     return (int16_t) pid->output_val;
+}
+
+void bsp_can_set_speed(int16_t motor1, int16_t motor2){
+    // Motor1
+    pid_speed[2].target_val = (float)(- motor1);
+    // Motor2
+    pid_speed[3].target_val = (float)motor2;
 }

@@ -49,9 +49,11 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
-#include "utils/uartstdio.h"
+//#include "utils/uartstdio.h"
 
 #include "bsp_can.h"
+#include "uart_parser.h"
+//#include "bsp_adc.h"
 
 //*****************************************************************************
 //
@@ -83,44 +85,44 @@
 //*****************************************************************************
 
 
-void
-InitConsole(void)
-{
-    //
-    // Enable GPIO port A which is used for UART0 pins.
-    // TODO: change this to whichever GPIO port you are using.
-    //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-
-    //
-    // Configure the pin muxing for UART0 functions on port A0 and A1.
-    // This step is not necessary if your part does not support pin muxing.
-    // TODO: change this to select the port/pin you are using.
-    //
-    GPIOPinConfigure(GPIO_PA0_U0RX);
-    GPIOPinConfigure(GPIO_PA1_U0TX);
-
-    //
-    // Enable UART0 so that we can configure the clock.
-    //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
-
-    //
-    // Use the internal 16MHz oscillator as the UART clock source.
-    //
-    UARTClockSourceSet(UART0_BASE, UART_CLOCK_PIOSC);
-
-    //
-    // Select the alternate (UART) function for these pins.
-    // TODO: change this to select the port/pin you are using.
-    //
-    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-
-    //
-    // Initialize the UART for console I/O.
-    //
-    UARTStdioConfig(0, 115200, 16000000);
-}
+//void
+//InitConsole(void)
+//{
+//    //
+//    // Enable GPIO port A which is used for UART0 pins.
+//    // TODO: change this to whichever GPIO port you are using.
+//    //
+//    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+//
+//    //
+//    // Configure the pin muxing for UART0 functions on port A0 and A1.
+//    // This step is not necessary if your part does not support pin muxing.
+//    // TODO: change this to select the port/pin you are using.
+//    //
+//    GPIOPinConfigure(GPIO_PA0_U0RX);
+//    GPIOPinConfigure(GPIO_PA1_U0TX);
+//
+//    //
+//    // Enable UART0 so that we can configure the clock.
+//    //
+//    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+//
+//    //
+//    // Use the internal 16MHz oscillator as the UART clock source.
+//    //
+//    UARTClockSourceSet(UART0_BASE, UART_CLOCK_PIOSC);
+//
+//    //
+//    // Select the alternate (UART) function for these pins.
+//    // TODO: change this to select the port/pin you are using.
+//    //
+//    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+//
+//    //
+//    // Initialize the UART for console I/O.
+//    //
+//    UARTStdioConfig(0, 115200, 16000000);
+//}
 
 
 
@@ -156,12 +158,14 @@ main(void)
     SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ); // 80MHz
 #endif
 
+    UARTInit();
     //
     // Set up the serial console to use for displaying messages.  This is
     // just for this example program and is not needed for CAN operation.
     //
-    InitConsole();
+//    InitConsole();
 
+    bsp_adc_init();
     bsp_can_init();
 
     //
@@ -219,7 +223,7 @@ main(void)
 
             bsp_can_get_feedback();
 
-            UARTprintf("Angle=%d speed=%d torque=%d\n", m2006_angle[2], m2006_speed[2], m2006_torque[2]);
+//            UARTprintf("Angle=%d speed=%d torque=%d\n", m2006_angle[2], m2006_speed[2], m2006_torque[2]);
             //
             // Print out the contents of the message that was received.
             //
