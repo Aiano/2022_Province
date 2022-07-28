@@ -29,6 +29,8 @@ main.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.
 main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
+main.obj: D:/workspace_v12/car_leader/bsp/bsp_key.h
+main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 
 ../main.c:
 
@@ -87,4 +89,8 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h:
+
+D:/workspace_v12/car_leader/bsp/bsp_key.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
 

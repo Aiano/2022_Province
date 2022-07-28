@@ -7,6 +7,7 @@
 
 
 #include "follow_line.h"
+#include "bsp_key.h"
 #include "main.h"
 
 int16_t target_value = 120;
@@ -21,7 +22,7 @@ void follow_line(int16_t now_value){
 //    ultrasonic_value = 200;
 
 //    UARTSend((uint8_t *)"hello\n", 16);
-    if(ultrasonic_value < 300){
+    if(!bsp_key_flag || ultrasonic_value < 300){
         bsp_can_set_speed(0, 0);
     }else{
         delta_value = target_value - now_value;

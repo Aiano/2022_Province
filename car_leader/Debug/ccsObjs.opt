@@ -2,6 +2,7 @@
 "./startup_ccs.obj"
 "./bsp/bsp_adc.obj"
 "./bsp/bsp_can.obj"
+"./bsp/bsp_key.obj"
 "./bsp/follow_line.obj"
 "./bsp/uart_parser.obj"
 "../blinky_ccs.cmd"

@@ -53,6 +53,7 @@
 
 #include "bsp_can.h"
 #include "uart_parser.h"
+#include "bsp_key.h"
 //#include "bsp_adc.h"
 
 //*****************************************************************************
@@ -165,6 +166,7 @@ main(void)
     //
 //    InitConsole();
 
+    bsp_key_init();
     bsp_adc_init();
     bsp_can_init();
 
@@ -216,24 +218,14 @@ main(void)
             // Check to see if there is an indication that some messages were
             // lost.
             //
-//            if(sCANMessage.ui32Flags & MSG_OBJ_DATA_LOST)
-//            {
-//                UARTprintf("CAN message loss detected\n");
-//            }
 
             bsp_can_get_feedback();
 
-//            UARTprintf("Angle=%d speed=%d torque=%d\n", m2006_angle[2], m2006_speed[2], m2006_torque[2]);
-            //
-            // Print out the contents of the message that was received.
-            //
-//            UARTprintf("Msg ID=0x%08X len=%u data=0x",
-//                       sCANMessage.ui32MsgID, sCANMessage.ui32MsgLen);
-//            for(uIdx = 0; uIdx < sCANMessage.ui32MsgLen; uIdx++)
-//            {
-//                UARTprintf("%02X ", pui8MsgData[uIdx]);
-//            }
-//            UARTprintf("total count=%u\n", g_ui32MsgCount);
+        }
+        if(bsp_key_flag){
+            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0xFF);
+        }else{
+            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
         }
     }
 
