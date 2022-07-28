@@ -54,6 +54,8 @@
 #include "bsp_can.h"
 #include "uart_parser.h"
 #include "bsp_key.h"
+#include "bsp_buzzer.h"
+#include "bsp_led.h"
 //#include "bsp_adc.h"
 
 //*****************************************************************************
@@ -169,7 +171,8 @@ main(void)
     bsp_key_init();
     bsp_adc_init();
     bsp_can_init();
-
+    bsp_buzzer_init();
+    bsp_led_init();
     //
     // Enter loop to process received messages.  This loop just checks a flag
     // that is set by the interrupt handler, and if set it reads out the
@@ -224,8 +227,13 @@ main(void)
         }
         if(bsp_key_flag){
             GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0xFF);
+            bsp_buzzer_set(1);
+            bsp_led_set(BSP_LED_1, 1);
+
         }else{
             GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
+            bsp_buzzer_set(0);
+            bsp_led_set(BSP_LED_1, 0);
         }
     }
 

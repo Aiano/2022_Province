@@ -8,7 +8,7 @@
 
 #include "bsp_key.h"
 
-bool bsp_key_flag = 1;
+bool bsp_key_flag = 0;
 
 //中断处理程序
 void io_interrupt(void)

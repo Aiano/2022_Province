@@ -275,7 +275,7 @@ void bsp_can_pid_param_init(){
     pid_speed[2].err = 0.0;
     pid_speed[2].err_last = 0.0;
     pid_speed[2].integral = 0.0;
-    pid_speed[2].Kp = 4;
+    pid_speed[2].Kp = 3;
     pid_speed[2].Ki = 0.0;
     pid_speed[2].Kd = 0.0;
     // Motor4
@@ -284,7 +284,7 @@ void bsp_can_pid_param_init(){
     pid_speed[3].err = 0.0;
     pid_speed[3].err_last = 0.0;
     pid_speed[3].integral = 0.0;
-    pid_speed[3].Kp = 4;
+    pid_speed[3].Kp = 3;
     pid_speed[3].Ki = 0.0;
     pid_speed[3].Kd = 0.0;
 }

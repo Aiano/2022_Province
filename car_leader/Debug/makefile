@@ -13,8 +13,10 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./startup_ccs.obj" \
 "./bsp/bsp_adc.obj" \
+"./bsp/bsp_buzzer.obj" \
 "./bsp/bsp_can.obj" \
 "./bsp/bsp_key.obj" \
+"./bsp/bsp_led.obj" \
 "./bsp/follow_line.obj" \
 "./bsp/uart_parser.obj" \
 "../blinky_ccs.cmd" \
@@ -164,8 +166,8 @@ car_leader.bin: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "startup_ccs.obj" "bsp\bsp_adc.obj" "bsp\bsp_can.obj" "bsp\bsp_key.obj" "bsp\follow_line.obj" "bsp\uart_parser.obj" 
-	-$(RM) "main.d" "startup_ccs.d" "bsp\bsp_adc.d" "bsp\bsp_can.d" "bsp\bsp_key.d" "bsp\follow_line.d" "bsp\uart_parser.d" 
+	-$(RM) "main.obj" "startup_ccs.obj" "bsp\bsp_adc.obj" "bsp\bsp_buzzer.obj" "bsp\bsp_can.obj" "bsp\bsp_key.obj" "bsp\bsp_led.obj" "bsp\follow_line.obj" "bsp\uart_parser.obj" 
+	-$(RM) "main.d" "startup_ccs.d" "bsp\bsp_adc.d" "bsp\bsp_buzzer.d" "bsp\bsp_can.d" "bsp\bsp_key.d" "bsp\bsp_led.d" "bsp\follow_line.d" "bsp\uart_parser.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

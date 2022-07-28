@@ -12,8 +12,8 @@
 
 int16_t target_value = 120;
 int16_t delta_value = 0;
-int16_t avg_speed = 3000;
-int16_t Kp = 20;
+int16_t avg_speed = 6000; // 7000 0.5
+int16_t Kp = 15;
 int16_t u = 0;
 uint32_t ultrasonic_value;
 
@@ -22,7 +22,7 @@ void follow_line(int16_t now_value){
 //    ultrasonic_value = 200;
 
 //    UARTSend((uint8_t *)"hello\n", 16);
-    if(!bsp_key_flag || ultrasonic_value < 300){
+    if(!bsp_key_flag || ultrasonic_value < 420){ // 420 -> 20cm
         bsp_can_set_speed(0, 0);
     }else{
         delta_value = target_value - now_value;
