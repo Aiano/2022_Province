@@ -199,10 +199,10 @@ main(void)
                 task1(uart1_received_value);
                 break;
             case 2:
-                task2();
+                task2(uart1_received_value);
                 break;
             case 3:
-                task3();
+                task3(uart1_received_value);
                 break;
             case 4:
                 task4();

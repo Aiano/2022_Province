@@ -56,7 +56,10 @@
 #include "bsp_key.h"
 #include "bsp_buzzer.h"
 #include "bsp_led.h"
-//#include "bsp_adc.h"
+#include "bsp_adc.h"
+#include "follow_line.h"
+
+bool running_state = 0;
 
 //*****************************************************************************
 //
@@ -184,23 +187,64 @@ main(void)
             bsp_can_get_feedback();
 
         }
-        task1(120);
-        if(bsp_key_flag){
-            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0xFF);
-            bsp_buzzer_set(1);
-            bsp_led_set(BSP_LED_1, 1);
 
+        if(running_state){
+            // Turn off LED indicator
+            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
+
+            switch(now_task){
+            case 1:
+                task1(uart1_received_value);
+                break;
+            case 2:
+                task2(uart1_received_value);
+                break;
+            case 3:
+                task3();
+                break;
+            case 4:
+                task4();
+                break;
+            }
 
         }else{
-            GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
-            bsp_buzzer_set(0);
-            bsp_led_set(BSP_LED_1, 0);
+            // Stop two motors
             bsp_can_set_speed(0, 0);
+
+            // LED indicator
+            static bool led_indicator_state = 0;
+            static uint32_t led_indicator_count = 0;
+            static uint8_t now_task_count = 0;
+            static bool during_long_pause = 0;
+            static uint32_t long_pause_count = 0;
+
+            if(during_long_pause){
+                if(long_pause_count ++ > 1000000){
+                    long_pause_count = 0;
+                    during_long_pause = 0;
+                }
+            }else{
+                if(led_indicator_count ++ > 200000){
+                    led_indicator_count = 0;
+
+                    led_indicator_state = !led_indicator_state;
+                    if(led_indicator_state){
+                        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0xFF);
+
+                    }else{
+                        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0x00);
+
+                        now_task_count ++;
+                        if(now_task_count == now_task){
+                            now_task_count = 0;
+
+                            during_long_pause = 1;
+                        }
+                    }
+                }
+            }
         }
     }
 
-    //
-    // Return no errors
-    //
-//    return(0);
+
 }

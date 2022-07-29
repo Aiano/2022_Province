@@ -8,8 +8,7 @@
 
 #include "bsp_key.h"
 #include "uart_parser.h"
-
-bool bsp_key_flag = 0;
+#include "main.h"
 
 //中断处理程序
 void io_interrupt(void)
@@ -21,7 +20,7 @@ void io_interrupt(void)
     {
         SysCtlDelay(80 * 1000 * 10);
         if(!GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4)){ // 软件消抖
-            bsp_key_flag = !bsp_key_flag;
+            running_state = !running_state;
             UART2Send("R\n", 2);
         }
 //        while(!)//等待按键松开

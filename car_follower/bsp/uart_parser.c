@@ -8,7 +8,8 @@
 
 #include "uart_parser.h"
 #include "follow_line.h"
-
+#include "bsp_buzzer.h"
+#include "main.h"
 
 volatile uint8_t uart1_receive_count = 0;
 volatile uint8_t uart1_receive_buffer[20] = {0};
@@ -20,7 +21,6 @@ volatile uint8_t uart2_receive_buffer[20] = {0};
 volatile uint8_t uart2_received_command = 0;
 volatile int16_t uart2_received_value = 0;
 
-extern bool bsp_key_flag;
 
 
 //*****************************************************************************
@@ -64,7 +64,7 @@ UART2Send(const uint8_t *pui8Buffer, uint32_t ui32Count)
 // The UART interrupt handler.
 //
 //*****************************************************************************
-void
+void // visual
 UART1IntHandler(void)
 {
     uint32_t ui32Status;
@@ -100,7 +100,7 @@ UART1IntHandler(void)
 }
 
 
-void
+void // bluetooth
 UART2IntHandler(void)
 {
     uint32_t ui32Status;
@@ -121,10 +121,14 @@ UART2IntHandler(void)
             uart2_received_command = uart2_receive_buffer[0];
 
             if(uart2_received_command == 'R') { // Run
-                bsp_key_flag = 1;
+                running_state = 1;
             }
             else if(uart2_received_command == 'A') { // A point (stop)
-                bsp_key_flag = 0;
+                running_state = 0;
+                bsp_buzzer_set(1);
+            }
+            else if(uart2_received_command == 'T') { // Switch task
+                now_task = uart2_received_value;
             }
 
             //ROM_UARTCharPutNonBlocking(UART2_BASE, (uint8_t) uart2_received_value);

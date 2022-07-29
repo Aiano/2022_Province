@@ -27,6 +27,9 @@ bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h
+bsp/bsp_key.obj: D:/workspace_v12/car_follower/main.h
+bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h
+bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h
 
 ../bsp/bsp_key.c:
 
@@ -81,4 +84,10 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h:
+
+D:/workspace_v12/car_follower/main.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h:
 

@@ -327,5 +327,5 @@ void bsp_can_set_speed(int16_t motor1, int16_t motor2){
     // Motor1
     pid_speed[2].target_val = (float)(- motor1);
     // Motor2
-    pid_speed[3].target_val = (float)motor2;
+    pid_speed[3].target_val = (float)(motor2);
 }

@@ -33,6 +33,7 @@ bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_types.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h
 bsp/uart_parser.obj: ../bsp/bsp_adc.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h
+bsp/uart_parser.obj: ../bsp/bsp_buzzer.h
 
 ../bsp/uart_parser.c:
 
@@ -99,4 +100,6 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h:
 ../bsp/bsp_adc.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h:
+
+../bsp/bsp_buzzer.h:
 

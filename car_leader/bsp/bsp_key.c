@@ -37,6 +37,10 @@ void io_interrupt(void)
         if(!GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0)){
             now_task++;
             if(now_task > task_num) now_task = 1;
+
+            uint8_t send_buffer[3] = {'T', '0', '\n'};
+            send_buffer[1] += now_task;
+            UART2Send(send_buffer, sizeof(send_buffer));
         }
     }
 }

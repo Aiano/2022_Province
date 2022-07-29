@@ -22,4 +22,7 @@
 #include "driverlib/uart.h"
 //#include "utils/uartstdio.h"
 
+
+extern bool running_state;
+
 #endif /* MAIN_H_ */
