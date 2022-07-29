@@ -13,6 +13,7 @@
 #include <stdbool.h>
 #include "inc/hw_ints.h"
 #include "inc/hw_memmap.h"
+#include "inc/hw_gpio.h"
 #include "driverlib/debug.h"
 #include "driverlib/fpu.h"
 #include "driverlib/gpio.h"
@@ -22,10 +23,11 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
 
-extern int16_t uart_received_value;
+extern int16_t uart1_received_value;
+extern uint8_t uart1_received_command;
 
-void
-UARTSend(const uint8_t *pui8Buffer, uint32_t ui32Count);
+void UART1Send(const uint8_t *pui8Buffer, uint32_t ui32Count);
+void UART2Send(const uint8_t *pui8Buffer, uint32_t ui32Count);
 void UARTInit();
 
 #endif /* BSP_UART_PARSER_H_ */

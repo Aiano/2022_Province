@@ -26,11 +26,11 @@ main.obj: D:/workspace_v12/car_leader/bsp/bsp_can.h
 main.obj: D:/workspace_v12/car_leader/main.h
 main.obj: D:/workspace_v12/car_leader/bsp/uart_parser.h
 main.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.h
+main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 main.obj: D:/workspace_v12/car_leader/bsp/bsp_key.h
-main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 main.obj: D:/workspace_v12/car_leader/bsp/bsp_buzzer.h
 main.obj: D:/workspace_v12/car_leader/bsp/bsp_led.h
 
@@ -86,6 +86,8 @@ D:/workspace_v12/car_leader/bsp/uart_parser.h:
 
 C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.h:
 
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
+
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
@@ -93,8 +95,6 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h:
 
 D:/workspace_v12/car_leader/bsp/bsp_key.h:
-
-C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
 
 D:/workspace_v12/car_leader/bsp/bsp_buzzer.h:
 

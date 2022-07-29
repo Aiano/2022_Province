@@ -16,6 +16,7 @@ bsp/uart_parser.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/incl
 bsp/uart_parser.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdbool.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_ints.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_memmap.h
+bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/gpio.h
@@ -64,6 +65,8 @@ C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdbool.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_ints.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_memmap.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h:
 

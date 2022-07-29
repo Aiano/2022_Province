@@ -29,11 +29,11 @@ bsp/follow_line.obj: ../bsp/bsp_adc.h
 bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h
 bsp/follow_line.obj: ../bsp/uart_parser.h
 bsp/follow_line.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.h
+bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 bsp/follow_line.obj: ../bsp/bsp_key.h
-bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h
 
 ../bsp/follow_line.c:
 
@@ -93,6 +93,8 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h:
 
 C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.h:
 
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
+
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
@@ -100,6 +102,4 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h:
 
 ../bsp/bsp_key.h:
-
-C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_gpio.h:
 

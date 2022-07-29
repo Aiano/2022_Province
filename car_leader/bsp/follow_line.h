@@ -13,6 +13,9 @@
 //#include "utils/uartstdio.h"
 #include "uart_parser.h"
 
-void follow_line(int16_t now_value);
+extern uint8_t now_task;
+extern uint8_t task_num;
+
+void task1(int16_t now_value);
 
 #endif /* BSP_FOLLOW_LINE_H_ */
