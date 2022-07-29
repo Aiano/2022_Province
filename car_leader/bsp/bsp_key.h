@@ -19,7 +19,7 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/interrupt.h"
 
-extern bool bsp_key_flag;
+#include "main.h"
 
 void io_interrupt(void);
 void bsp_key_init();

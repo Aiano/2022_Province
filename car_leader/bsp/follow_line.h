@@ -17,5 +17,8 @@ extern uint8_t now_task;
 extern uint8_t task_num;
 
 void task1(int16_t now_value);
+void task2();
+void task3();
+void task4();
 
 #endif /* BSP_FOLLOW_LINE_H_ */

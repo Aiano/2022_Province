@@ -22,6 +22,7 @@
 #include "driverlib/rom.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/uart.h"
+#include "main.h"
 
 extern int16_t uart1_received_value;
 extern uint8_t uart1_received_command;

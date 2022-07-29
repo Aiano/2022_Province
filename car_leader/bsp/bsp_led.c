@@ -11,6 +11,8 @@
 void bsp_led_init(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
     GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_5);
+
+    bsp_led_set(BSP_LED_1, 0);
 }
 void bsp_led_set(BSP_LED_t led, bool state){
     uint8_t value = state?0xff:0x00;

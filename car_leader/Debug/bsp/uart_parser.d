@@ -25,12 +25,12 @@ bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/pin_map
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/sysctl.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h
-bsp/uart_parser.obj: ../bsp/follow_line.h
-bsp/uart_parser.obj: ../bsp/bsp_can.h
 bsp/uart_parser.obj: D:/workspace_v12/car_leader/main.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_types.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h
+bsp/uart_parser.obj: ../bsp/follow_line.h
+bsp/uart_parser.obj: ../bsp/bsp_can.h
 bsp/uart_parser.obj: ../bsp/bsp_adc.h
 bsp/uart_parser.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h
 
@@ -84,10 +84,6 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/sysctl.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h:
 
-../bsp/follow_line.h:
-
-../bsp/bsp_can.h:
-
 D:/workspace_v12/car_leader/main.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h:
@@ -95,6 +91,10 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_types.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h:
+
+../bsp/follow_line.h:
+
+../bsp/bsp_can.h:
 
 ../bsp/bsp_adc.h:
 

@@ -33,6 +33,9 @@ main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 main.obj: D:/workspace_v12/car_leader/bsp/bsp_key.h
 main.obj: D:/workspace_v12/car_leader/bsp/bsp_buzzer.h
 main.obj: D:/workspace_v12/car_leader/bsp/bsp_led.h
+main.obj: D:/workspace_v12/car_leader/bsp/follow_line.h
+main.obj: D:/workspace_v12/car_leader/bsp/bsp_adc.h
+main.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h
 
 ../main.c:
 
@@ -99,4 +102,10 @@ D:/workspace_v12/car_leader/bsp/bsp_key.h:
 D:/workspace_v12/car_leader/bsp/bsp_buzzer.h:
 
 D:/workspace_v12/car_leader/bsp/bsp_led.h:
+
+D:/workspace_v12/car_leader/bsp/follow_line.h:
+
+D:/workspace_v12/car_leader/bsp/bsp_adc.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h:
 

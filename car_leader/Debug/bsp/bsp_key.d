@@ -21,12 +21,19 @@ bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/gpio.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/pin_map.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/sysctl.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/interrupt.h
+bsp/bsp_key.obj: D:/workspace_v12/car_leader/main.h
+bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h
+bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h
+bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h
 bsp/bsp_key.obj: ../bsp/uart_parser.h
 bsp/bsp_key.obj: C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
-bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h
+bsp/bsp_key.obj: ../bsp/follow_line.h
+bsp/bsp_key.obj: ../bsp/bsp_can.h
+bsp/bsp_key.obj: ../bsp/bsp_adc.h
+bsp/bsp_key.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h
 
 ../bsp/bsp_key.c:
 
@@ -70,6 +77,14 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/sysctl.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/interrupt.h:
 
+D:/workspace_v12/car_leader/main.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/inc/hw_can.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/can.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h:
+
 ../bsp/uart_parser.h:
 
 C:/ti/ccs1200/ccs/tools/compiler/ti-cgt-arm_20.2.6.LTS/include/stdlib.h:
@@ -80,5 +95,11 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
 
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h:
 
-C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/uart.h:
+../bsp/follow_line.h:
+
+../bsp/bsp_can.h:
+
+../bsp/bsp_adc.h:
+
+C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/adc.h:
 

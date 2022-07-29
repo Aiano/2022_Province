@@ -20,8 +20,6 @@ uint8_t uart2_receive_buffer[20];
 uint8_t uart2_received_command;
 int16_t uart2_received_value;
 
-extern bool bsp_key_flag;
-
 
 //*****************************************************************************
 //
@@ -119,7 +117,7 @@ UART2IntHandler(void)
             uart2_received_value = atoi(uart2_receive_buffer + 1);
             uart2_received_command = uart2_receive_buffer[0];
 
-            if(uart2_received_command = 'A') bsp_key_flag = !bsp_key_flag;
+            if(uart2_received_command == 'A') running_state = !running_state;
 
             //ROM_UARTCharPutNonBlocking(UART2_BASE, (uint8_t) uart2_received_value);
             uart2_receive_count = 0;

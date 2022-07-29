@@ -34,6 +34,8 @@ bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/debug.h
 bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h
 bsp/follow_line.obj: C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h
 bsp/follow_line.obj: ../bsp/bsp_key.h
+bsp/follow_line.obj: ../bsp/bsp_buzzer.h
+bsp/follow_line.obj: ../bsp/bsp_led.h
 
 ../bsp/follow_line.c:
 
@@ -102,4 +104,8 @@ C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/fpu.h:
 C:/ti/ccs1200/tivaware_c_series_2_1_4_178/driverlib/rom.h:
 
 ../bsp/bsp_key.h:
+
+../bsp/bsp_buzzer.h:
+
+../bsp/bsp_led.h:
 

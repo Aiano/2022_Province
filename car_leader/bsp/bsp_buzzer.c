@@ -11,6 +11,8 @@
 void bsp_buzzer_init(){
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
     GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_4);
+
+    bsp_buzzer_set(0);
 }
 
 
