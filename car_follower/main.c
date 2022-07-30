@@ -203,7 +203,7 @@ main(void)
                 task3();
                 break;
             case 4:
-                task4();
+                task4(uart1_received_value);
                 break;
             }
 

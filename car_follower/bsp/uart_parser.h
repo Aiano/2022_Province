@@ -25,6 +25,8 @@
 
 extern volatile int16_t uart1_received_value;
 
+extern volatile uint8_t uart1_received_command;
+
 void UART1Send(const uint8_t *pui8Buffer, uint32_t ui32Count);
 void UART2Send(const uint8_t *pui8Buffer, uint32_t ui32Count);
 void UARTInit();

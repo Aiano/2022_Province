@@ -123,12 +123,14 @@ UART2IntHandler(void)
             if(uart2_received_command == 'R') { // Run
                 running_state = 1;
             }
-            else if(uart2_received_command == 'A') { // A point (stop)
+            else if(uart2_received_command == 'A') { // A point
                 running_state = 0;
                 bsp_buzzer_set(1);
             }
             else if(uart2_received_command == 'T') { // Switch task
                 now_task = uart2_received_value;
+            }else if(uart2_received_command == 'S') {
+                running_state = 0;
             }
 
             //ROM_UARTCharPutNonBlocking(UART2_BASE, (uint8_t) uart2_received_value);

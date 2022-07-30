@@ -16,9 +16,11 @@
 extern uint8_t now_task;
 extern uint8_t task_num;
 
+#define delay_ms(n); SysCtlDelay(n*(SysCtlClockGet()/3000));
+
 void task1(int16_t now_value);
 void task2(int16_t now_value);
 void task3(int16_t now_value);
-void task4();
+void task4(int16_t now_value);
 
 #endif /* BSP_FOLLOW_LINE_H_ */

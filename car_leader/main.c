@@ -205,7 +205,7 @@ main(void)
                 task3(uart1_received_value);
                 break;
             case 4:
-                task4();
+                task4(uart1_received_value);
                 break;
             }
 

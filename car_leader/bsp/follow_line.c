@@ -64,7 +64,7 @@ void task2(int16_t now_value){
         if(uart1_received_command == 'A'){
             GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0xff);
         }
-        if(task2_last_received_command == 'L' && (uart1_received_command == 'S' || uart1_received_command == 'A')){
+        if((task2_last_received_command == 'L'||task2_last_received_command == 'X') && (uart1_received_command == 'S' || uart1_received_command == 'A')){
 
             task2_circle++;
             if(task2_circle == 2){
@@ -132,6 +132,57 @@ void task3(int16_t now_value){
     }
 }
 
-void task4(){
+// 3200 -> 0.3m/s
+int16_t task4_avg_speed = 7000;
+int16_t task4_Kp = 14;
+int16_t task4_u = 0;
+bool task4_stop = 0;
+int32_t task4_stop_count = 0;
+int32_t task4_stop_count_threshold = 900000; // 5s
+bool task4_has_stopped = 0;
+void task4(int16_t now_value){
+    ultrasonic_value = bsp_adc_read();
 
+    if(task4_stop){
+        task4_stop_count++;
+        if(task4_stop_count > task4_stop_count_threshold){
+            task4_stop_count = 0;
+            task4_has_stopped = 1;
+            task4_stop = 0;
+            UART2Send("R1\n", 3);
+        }
+        return;
+    }
+
+    if(!running_state || ultrasonic_value < 420){ // ÁìÍ·³µ·À×²
+        bsp_can_set_speed(0, 0);
+    }else{
+        if(uart1_received_command == 'S'){
+            if(task4_has_stopped){
+                bsp_can_set_speed(task4_avg_speed, task4_avg_speed);
+                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0x00);
+
+            }else{
+                bsp_can_set_speed(0, 0);
+                UART2Send("S1\n", 3);
+                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0xff);
+
+                task4_stop = 1;
+            }
+
+        }else if(uart1_received_command == 'A'){
+
+            bsp_buzzer_set(1);
+            bsp_can_set_speed(0, 0);
+            running_state = 0;
+            UART2Send("A1\n", 3);
+        }
+        else if(uart1_received_command == 'L'){
+            delta_value = target_value - now_value;
+            task4_u = task4_Kp * delta_value;
+            bsp_can_set_speed(task4_avg_speed + task4_u, task4_avg_speed - task4_u);
+        }else if(uart1_received_command == 'X'){
+            bsp_can_set_speed(task4_avg_speed, task4_avg_speed);
+        }
+    }
 }
